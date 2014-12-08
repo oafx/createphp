@@ -88,6 +88,15 @@ class RdfDriverXml extends AbstractRdfDriver
         if (isset($xml['typeof'])) {
             $type->setRdfType($xml['typeof']);
         }
+
+        if (isset($xml['vocab'])) {
+            $type->setAttribute('vocab' , $xml['vocab']);
+        }
+
+        if (isset($xml['prefix'])) {
+            $type->setAttribute('prefix', $xml['prefix']);
+        }
+        
         $add_default_vocabulary = false;
         foreach($xml->children->children() as $child) {
             $c = $this->createChild($child->getName(), $child['identifier'], $child, $typeFactory);
