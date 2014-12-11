@@ -127,7 +127,7 @@ class Controller extends Node implements EntityInterface
     public function setVocabulary($prefix, $uri)
     {
         $this->_vocabularies[$prefix] = $uri;
-        $this->setAttribute('xmlns:' . $prefix, $uri);
+        /*$this->setAttribute('xmlns:' . $prefix, $uri);*/
     }
 
     /**
