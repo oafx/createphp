@@ -95,6 +95,10 @@ class RdfDriverXml extends AbstractRdfDriver
 
         if (isset($xml['prefix'])) {
             $type->setAttribute('prefix', $xml['prefix']);
+
+            $prefix = explode($xml['prefix'])[0];
+            $url = explode($xml['prefix'])[1];
+            $type->setVocabulary($prefix, $url);
         }
         
         $add_default_vocabulary = false;
